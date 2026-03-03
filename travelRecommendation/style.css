@@ -1,0 +1,351 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a2e;
+    min-height: 100vh;
+    background-image: url('SydneyPic.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #0f3460;
+}
+
+/* ===== Navbar ===== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 25, 60, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: 64px;
+    list-style: none;
+}
+
+header nav h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+header nav li {
+    list-style: none;
+}
+
+header nav li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+}
+
+header nav li a:hover,
+header nav li a[href*="travel_recommendation"]:is(#home) {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Search bar inside nav */
+header nav li input[type="text"] {
+    padding: 0.45rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 0.9rem;
+    width: 220px;
+    outline: none;
+    transition: border 0.2s, background 0.2s, width 0.3s;
+}
+
+header nav li input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+header nav li input[type="text"]:focus {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.2);
+    width: 260px;
+}
+
+/* Nav buttons */
+header nav li button {
+    padding: 0.45rem 1.1rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.2s;
+}
+
+header nav li button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+#btnSearch {
+    background: #e94560;
+    color: #fff;
+}
+
+#btnClear {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* ===== Main Content ===== */
+main {
+    max-width: 860px;
+    margin: 3rem auto;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+}
+
+main h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0a1931;
+    margin-bottom: 1rem;
+}
+
+main h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0a1931;
+    margin: 1.5rem 0 0.75rem;
+}
+
+main p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* image thumbnail style */
+.thumb {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+}
+
+/* ===== About Us — Team Section ===== */
+main h2 + br,
+main h2 ~ br {
+    display: none;
+}
+
+/* ===== Contact Form ===== */
+form#contactForm {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+form#contactForm label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1a1a2e;
+    margin-top: 0.75rem;
+}
+
+form#contactForm input[type="text"],
+form#contactForm input[type="email"],
+form#contactForm textarea {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border: 1.5px solid #ccd1e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #1a1a2e;
+    background: #f8f9fc;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-top: 0.3rem;
+}
+
+form#contactForm input[type="text"]:focus,
+form#contactForm input[type="email"]:focus,
+form#contactForm textarea:focus {
+    border-color: #e94560;
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.15);
+    background: #fff;
+}
+
+form#contactForm textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form#contactForm button[type="submit"] {
+    margin-top: 1.25rem;
+    align-self: flex-start;
+    padding: 0.65rem 2rem;
+    background: #e94560;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+form#contactForm button[type="submit"]:hover {
+    background: #c73652;
+    transform: translateY(-2px);
+}
+
+/* ===== Home page welcome ===== */
+#welcomeMessage {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0a1931;
+    margin-bottom: 1rem;
+}
+
+/* ===== Search Results Area ===== */
+#results {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Country mode: full-width groups stacked vertically */
+#results .country-group {
+    grid-column: 1 / -1;
+    margin-bottom: 0.5rem;
+}
+
+.country-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0a1931;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #e94560;
+}
+
+.country-cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.result-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.result-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.result-card-body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.result-card-body h3,
+.result-card-body h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0a1931;
+    margin: 0;
+}
+
+.result-card-body p {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+}
+
+.result-card-body small {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #e94560;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    header nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 0.75rem 1rem;
+        gap: 0.6rem;
+    }
+
+    header nav h1 {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    header nav li input[type="text"] {
+        width: 160px;
+    }
+
+    header nav li input[type="text"]:focus {
+        width: 180px;
+    }
+
+    main {
+        margin: 1.5rem 1rem;
+        padding: 1.5rem 1.25rem;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+    }
+}
