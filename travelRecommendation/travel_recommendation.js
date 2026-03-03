@@ -44,6 +44,25 @@ function fetchResults(input) {
                 return;
             }
 
+            if (input === 'temple') {
+                if (Array.isArray(data.temples)) {
+                    data.temples.forEach(item => {
+                        matches.push({
+                            name: item.name,
+                            imageUrl: item.imageUrl,
+                            description: item.description,
+                            type: 'Temple'
+                        });
+                    });
+                }
+                if (matches.length === 0) {
+                    resultDiv.innerHTML = '<p>No temples found.</p>';
+                    return;
+                }
+                renderCards(resultDiv, matches);
+                return;
+            }
+
             // default search: search across cities, temples, and beaches
             const terms = input.split(/\s+/).filter(t => t);
 
